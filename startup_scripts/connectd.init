@@ -10,7 +10,7 @@
 ### END INIT INFO
 
 service_name=connectd
-exe=weavedd
+exe=connectd
 exe_path=/usr/bin/$exe
 pidfile=/var/run/$service_name.pid
 config_path=/etc/weaved
