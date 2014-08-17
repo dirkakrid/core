@@ -13,7 +13,7 @@ service_name=connectd
 exe=weavedd
 exe_path=/usr/bin/$exe
 pidfile=/var/run/$service_name.pid
-config_path=/etc/connectd
+config_path=/etc/weaved
 log_file=/dev/null
 
 #----------------------------------------

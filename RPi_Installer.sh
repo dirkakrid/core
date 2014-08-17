@@ -27,7 +27,7 @@ BIN_DIR=/usr/bin
 DAEMON=connectd
 INIT_DIR=/etc/init.d
 
-# Get connect.conf file for the device project
+# Get connectd.conf file for the device project
 # Requires user account and valid project on Portal
 clear
 echo "Please input your project code, followed by [ENTER]: "
@@ -37,7 +37,7 @@ echo -e "Your project code is $project\n"
 if [ ! -d "WEAVED_DIR" ]; then
 sudo mkdir $WEAVED_DIR
 fi
-sudo wget http://apiaws.yoics.net/v3/portal/members/downloadHandler.php?id=$project -O $WEAVED_DIR/connect.conf
+sudo wget http://apiaws.yoics.net/v3/portal/members/downloadHandler.php?id=$project -O $WEAVED_DIR/connectd.conf
 
 # Retrieve latest Weaved software from GitHub and install into proper locations
 if [ ! -d "$TMP" ]; then
