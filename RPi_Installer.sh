@@ -52,3 +52,5 @@ sudo cp $TMP/Core/startup_scripts/$DAEMON.init $INIT_DIR/$DAEMON
 sudo chmod +x $BIN_DIR/$DAEMON
 sudo chmod +x $INIT_DIR/$DAEMON
 
+# Startup the connectd daemon
+sudo /etc/init.d/connectd start
