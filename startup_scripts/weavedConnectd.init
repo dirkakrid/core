@@ -13,7 +13,8 @@ service_name=weavedConnectd
 exe=weavedConnectd
 exe_path=/usr/bin/$exe
 pidfile=/var/run/$service_name.pid
-config_path=/etc/weaved
+config_path=/etc/weaved/services
+config_name=http.conf
 log_file=/dev/null
 
 #----------------------------------------
@@ -54,7 +55,7 @@ if [ -f ${pidfile} ] ; then
 echo -n "already running "
 RETVAL=1
 else
-$exe_path -f $config_path/$service_name.conf -d $pidfile > $log_file
+$exe_path -f $config_path/$config_name -d $pidfile > $log_file
 sleep 1
 if [ -f ${pidfile} ] ; then
 RETVAL=0
