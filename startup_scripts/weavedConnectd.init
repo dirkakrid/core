@@ -4,7 +4,7 @@
 # Required-Start:    $local_fs $network
 # Required-Stop:     $local_fs $network
 # Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
+# Default-Stop:      1 2 3 4 5
 # Short-Description: weavedConnectd remote access proxy initscript
 # Description:       for more info go to http://weaved.com
 ### END INIT INFO
@@ -13,8 +13,7 @@ service_name=weavedConnectd
 exe=weavedConnectd
 exe_path=/usr/bin/$exe
 pidfile=/var/run/$service_name.pid
-config_path=/etc/weaved/services
-config_name=http.conf
+config_path=/etc/weaved
 log_file=/dev/null
 
 #----------------------------------------
@@ -55,7 +54,7 @@ if [ -f ${pidfile} ] ; then
 echo -n "already running "
 RETVAL=1
 else
-$exe_path -f $config_path/$config_name -d $pidfile > $log_file
+$exe_path -f $config_path/services/http.conf -d $pidfile > $log_file
 sleep 1
 if [ -f ${pidfile} ] ; then
 RETVAL=0
