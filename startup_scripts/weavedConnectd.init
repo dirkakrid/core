@@ -1,16 +1,16 @@
 #! /bin/sh
 ### BEGIN INIT INFO
-# Provides:          connectd
+# Provides:          weavedConnectd
 # Required-Start:    $local_fs $network
 # Required-Stop:     $local_fs $network
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: connectd remote access proxy initscript
+# Short-Description: weavedConnectd remote access proxy initscript
 # Description:       for more info go to http://weaved.com
 ### END INIT INFO
 
-service_name=connectd
-exe=connectd
+service_name=weavedConnectd
+exe=weavedConnectd
 exe_path=/usr/bin/$exe
 pidfile=/var/run/$service_name.pid
 config_path=/etc/weaved
